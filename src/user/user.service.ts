@@ -44,8 +44,8 @@ export class UserService {
 
   async editUser(id: number, dto: EditUserDto) {
     const user = await this.getUser(id);
-
     const editUser = Object.assign(user, dto);
+    // console.log(dto);
     return await this.userRepository.save(editUser);
   }
 
